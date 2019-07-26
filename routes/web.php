@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//Start Static Pages
+
+Route::get('/', 'PagesController@landing');
+Route::get('/main', 'PagesController@main');

@@ -1,0 +1,78 @@
+body {
+    margin: 0px;
+}
+
+/* Canvas display */
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+/* particles.js container */
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("/Common/mozaic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* Main Section */
+
+#MainSection {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    max-width: 400px;
+
+    z-index: 1;
+}
+
+input {
+    width: 100%;
+    padding: 14px 0px;
+    margin: 26px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    color: white;
+    padding: 14px 0px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: rgb(255, 136, 0);
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    margin: 20px !important;
+    color: white !important;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color: white !important;
+}
