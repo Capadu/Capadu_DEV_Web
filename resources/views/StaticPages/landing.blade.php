@@ -15,12 +15,21 @@
     <link rel="stylesheet" href="/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="/AdminLTE/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Loader -->
+    <link rel="stylesheet" href="/Plugins/Screen_Loader/loader.css">
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <!-- Custom styles for this template -->
     <link href="/css/landing/main.css" rel="stylesheet">
+
+    <!-- JS loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
 
 </head>
 
@@ -53,6 +62,8 @@
 <script src="/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- JS loader-->
+<script src="/Plugins/Screen_Loader/loader.js"></script>
 
 <!-- Particles -->
 <script src="/Plugins/Particles/particles.js"></script>
