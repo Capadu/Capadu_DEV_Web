@@ -265,6 +265,16 @@ header.masthead .bg-circle-3 {
     padding: 60px 0px 60px 0px;
 }
 
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000000;
+    padding: 30px;
+}
+
 /* Red */
 .red {
     border-color: rgb(255, 255, 255);

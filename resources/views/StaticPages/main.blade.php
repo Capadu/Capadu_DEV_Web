@@ -206,20 +206,20 @@
             <h2 class="section-heading text-white text-center">Contact</h2>
             <hr class="white_underline">
 
-            <form class="contact-form">
+            <form class="contact-form" method="POST" action="/login">
                 <div class="form-group">
-                    <label class="text-white" >Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                    <label class="text-white">Email address</label>
+                    <input type="email" class="form-control" name="email">
                 </div>
 
                 <div class="form-group">
-                    <label class="text-white" >Subject</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                    <label class="text-white">Subiect</label>
+                    <input type="text" class="form-control" name="subiect">
                 </div>
 
                 <div class="form-group">
-                    <label class="text-white">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                    <label class="text-white">Mesaj</label>
+                    <textarea class="form-control" name="mesaj" rows="6"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Trimite</button>
@@ -228,6 +228,8 @@
 
         </div>
     </div>
+
+    <div id="footer"> <h8 class="text-white">Copyright Capadu 2019</h8> </div>
 
 </div>
 
