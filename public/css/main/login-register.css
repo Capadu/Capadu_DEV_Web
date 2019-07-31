@@ -1,5 +1,5 @@
 .modal-open {
-    padding-right: 0 !important
+    padding-right: 0 !important;
 }
 
 .modal-content {
@@ -42,7 +42,7 @@
     color: white;
 }
 
-.modal form {
+.modal .form div {
     display: flex;
     flex-direction: column;
     justify-content: center;

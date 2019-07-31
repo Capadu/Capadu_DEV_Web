@@ -41,11 +41,11 @@
                     <div class="content">
 
                         <div class="form loginBox">
-                            <form method="" action="">
+                            <div>
                                 <input id="email" class="form-control" type="text" placeholder="Email" name="email">
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5" onclick="loginAjax()" >Conectare</button>
-                            </form>
+                                <button class="btn btn-primary btn-xl rounded-pill mt-5" onclick="loginAjax()" >Conectare</button>
+                            </div>
                         </div>
 
                     </div>
@@ -54,12 +54,14 @@
                 <div class="box">
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
-                            <form method="" action="">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                            <div>
+                                <input id="nume" class="form-control" type="text" placeholder="Nume" name="nume">
+                                <input id="unitate_de_invatamant" class="form-control" type="text" placeholder="Unitate de invatamant" name="unitate_de_invatamant">
+                                <input id="email" class="form-control" type="email" placeholder="Email" name="email">
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password">
                                 <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5" onclick="registerAjax()">Inregistrare</button>
-                            </form>
+                                <button class="btn btn-primary btn-xl rounded-pill mt-5" onclick="registerAjax()">Inregistrare</button>
+                            </div>
                         </div>
                     </div>
                 </div>
