@@ -30,11 +30,11 @@ class Authentication
             }
             else {
                 Session::flush();
-                return redirect('/login');
+                return redirect('/main');
             }
         }
         else {
-            return redirect('/login');
+            return redirect('/main');
         }
 
     }

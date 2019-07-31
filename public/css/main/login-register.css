@@ -42,7 +42,7 @@
     color: white;
 }
 
-.modal .form div {
+.modal form {
     display: flex;
     flex-direction: column;
     justify-content: center;

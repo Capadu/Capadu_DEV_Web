@@ -3,30 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Redirect,Response;
+
 use App\User;
 use Session;
+use Validator;
 
 class Registration extends Controller
 {
     public function register(Request $request) {
 
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'nume' => 'required|string|max:255',
             'unitate_de_invatamant' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'password_confirm' => 'required|string|max:255'
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|max:255|min:6',
+            'password_confirm' => 'required|string|max:255|min:6'
         ]);
 
-        if (count(User::where("email", "=", $request->email)->get()) != 0) {
-            Session::flash("error", "Email-ul deja exista");
-
-            return back();
+        if ($validator->fails()) {
+            return Response::json(['errors' => $validator->errors()]);
         }
-        if ($request->password != $request->password_confirm) {
-            Session::flash("error", "Parolele sunt diferte");
 
-            return back();
+        if (count(User::where("email", "=", $request->email)->get()) != 0) {
+
+            $email_error = (object) [
+                'error' => ["Email-ul deja exista"]
+            ];
+
+            return Response::json(['errors' => $email_error]);
+
+        }
+
+        if ($request->password != $request->password_confirm) {
+
+            $password_error = (object) [
+                'error' => ["Parolele sunt diferte"]
+            ];
+
+            return Response::json(['errors' => $password_error]);
         }
 
         $user = new User;
@@ -38,7 +53,7 @@ class Registration extends Controller
 
         Session::put("user", $user);
 
-        return redirect('/dashboard');
+        return Response::json(['success' => '1']);
 
     }
 }

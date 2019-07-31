@@ -40,29 +40,31 @@
                 <div class="box">
                     <div class="content">
 
-                        <div class="form loginBox">
-                            <div>
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <button class="btn btn-primary btn-xl rounded-pill mt-5" onclick="loginAjax()" >Conectare</button>
-                            </div>
-                        </div>
+                        <div id="login_errors"></div>
+
+                        <form class="loginBox" onsubmit="event.preventDefault(); loginAjax();">
+                            <input id="login_email" class="form-control" type="text" placeholder="Email" name="email">
+                            <input id="login_password" class="form-control" type="password" placeholder="Parola" name="password">
+                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Conectare</button>
+                        </form>
 
                     </div>
                 </div>
 
                 <div class="box">
                     <div class="content registerBox" style="display:none;">
-                        <div class="form">
-                            <div>
-                                <input id="nume" class="form-control" type="text" placeholder="Nume" name="nume">
-                                <input id="unitate_de_invatamant" class="form-control" type="text" placeholder="Unitate de invatamant" name="unitate_de_invatamant">
-                                <input id="email" class="form-control" type="email" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <button class="btn btn-primary btn-xl rounded-pill mt-5" onclick="registerAjax()">Inregistrare</button>
-                            </div>
-                        </div>
+
+                        <div id="register_errors"></div>
+
+                        <form onsubmit="event.preventDefault(); registerAjax();">
+                            <input id="register_nume" class="form-control" type="text" placeholder="Nume" name="nume">
+                            <input id="register_unitate_de_invatamant" class="form-control" type="text" placeholder="Unitate de invatamant" name="unitate_de_invatamant">
+                            <input id="register_email" class="form-control" type="email" placeholder="Email" name="email">
+                            <input id="register_password" class="form-control" type="password" placeholder="Parola" name="password">
+                            <input id="register_password_confirmation" class="form-control" type="password" placeholder="Repeata Parola" name="password_confirmation">
+                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Inregistrare</button>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -110,9 +112,15 @@
                     <a class="nav-link" href="/">Accesează un quiz</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">Log in</a>
-                </li>
+                @if(Session::has('user'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">Conectaere</a>
+                    </li>
+                @endif
 
                 <li class="nav-item">
                     <a class="nav-link" href="#about">Despre</a>
@@ -298,6 +306,9 @@
 
 <!-- Custom scripts for this page -->
 <script src="/js/main/login-register.js"></script>
+
+<!-- Set values for CRUD Modules -->
+<script> set_token("{{ csrf_token() }}");</script>
 
 </body>
 

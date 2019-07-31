@@ -14,4 +14,8 @@ class PagesController extends Controller
         return view('StaticPages.main');
     }
 
+    public function dashboard() {
+        return view('TeacherPages.dashboard');
+    }
+
 }

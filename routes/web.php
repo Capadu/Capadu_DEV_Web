@@ -14,5 +14,27 @@
 
 //Start Static Pages
 
-Route::get('/', 'PagesController@landing');
-Route::get('/main', 'PagesController@main');
+    Route::get('/', 'PagesController@landing');
+    Route::get('/main', 'PagesController@main');
+
+//End Static Pages
+
+
+//Start Authentication Pages
+
+    Route::post('/login', 'Authentication@login')->middleware('visitation');
+    Route::post('/logout', 'Authentication@logout')->middleware('authentication');
+    Route::post('/register', 'Registration@register')->middleware('visitation');
+
+//End Authentication Pages
+
+
+//Start Teacher Pages
+
+    Route::group(['middleware' => 'authentication'], function () {
+
+        Route::get('/dashboard', 'PagesController@dashboard');
+
+    });
+
+//End Teacher Pages
