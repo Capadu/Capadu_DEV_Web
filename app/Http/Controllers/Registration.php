@@ -17,8 +17,8 @@ class Registration extends Controller
             'nume' => 'required|string|max:255',
             'unitate_de_invatamant' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'password' => 'required|string|max:255|min:6',
-            'password_confirm' => 'required|string|max:255|min:6'
+            'password' => 'required|string|min:6|max:255',
+            'password_confirm' => 'required|string|max:255'
         ]);
 
         if ($validator->fails()) {

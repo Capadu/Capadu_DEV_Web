@@ -39,7 +39,7 @@ function loginAjax() {
         {
             "_token": token,
             "email": $('#login_email').val(),
-            "password": $('#login_email').val(),
+            "password": $('#login_password').val(),
         },
 
         function(data){
@@ -47,6 +47,10 @@ function loginAjax() {
                 document.location.href = '/dashboard';
             }
             else {
+                if (jQuery.isEmptyObject(data)) {
+                    location.reload();
+                }
+
                 var error_list = "";
                 jQuery.each(data.errors, function(key, value){
                     error_list = error_list + ('<ol><li>' + value + '</li></ol>');
@@ -77,6 +81,10 @@ function registerAjax() {
                 document.location.href = '/dashboard';
             }
             else {
+                if (jQuery.isEmptyObject(data)) {
+                    location.reload();
+                }
+
                 var error_list = "";
                 jQuery.each(data.errors, function(key, value){
                     error_list = error_list + ('<ol><li>' + value + '</li></ol>');

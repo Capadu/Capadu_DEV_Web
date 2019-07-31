@@ -15,7 +15,7 @@ class Authentication extends Controller
 
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|max:255',
-            'password' => 'required|string|max:255|min:6'
+            'password' => 'required|string|max:255'
         ]);
 
         if ($validator->fails()) {
@@ -50,7 +50,7 @@ class Authentication extends Controller
 
     }
 
-    public function logout($role) {
+    public function logout() {
         Session::flush();
         return redirect('/');
     }
