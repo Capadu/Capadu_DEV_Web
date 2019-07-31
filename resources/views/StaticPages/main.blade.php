@@ -24,9 +24,62 @@
     <!-- Custom styles for this page -->
     <link href="/css/main/contact_form.css" rel="stylesheet">
     <link href="/css/main/main.css" rel="stylesheet">
+    <link href="/css/main/login-register.css" rel="stylesheet">
 
 </head>
 
+<div class="modal fade login" id="authModal">
+    <div class="modal-dialog login animated">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-white">Conectare</h4>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="box">
+                    <div class="content">
+
+                        <div class="form loginBox">
+                            <form method="" action="">
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5" onclick="loginAjax()" >Conectare</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="content registerBox" style="display:none;">
+                        <div class="form">
+                            <form method="" action="">
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5" onclick="registerAjax()">Inregistrare</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="forgot login-footer text-white">
+                        <span>Vreti sa
+                             <a href="javascript: showRegisterForm();">creeati un cont</a>
+                        ?</span>
+                </div>
+                <div class="forgot register-footer text-white" style="display:none">
+                    <span>Aveti deja un cont ?</span>
+                    <a href="javascript: showLoginForm();">Conectare</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <body>
 
@@ -56,7 +109,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Conectare</a>
+                    <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">Log in</a>
                 </li>
 
                 <li class="nav-item">
@@ -240,6 +293,9 @@
 <script src="/Plugins/Bootstrap/bootstrap.min.js"></script>
 <!-- JS loader-->
 <script src="/Plugins/Screen_Loader/loader.js"></script>
+
+<!-- Custom scripts for this page -->
+<script src="/js/main/login-register.js"></script>
 
 </body>
 

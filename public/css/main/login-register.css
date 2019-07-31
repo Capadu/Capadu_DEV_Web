@@ -1,0 +1,54 @@
+.modal-open {
+    padding-right: 0 !important
+}
+
+.modal-content {
+    border: none;
+}
+
+.modal-header {
+    background-color: #ff5200;
+    border: none;
+}
+
+.modal-body {
+    background-color: #ff5200;
+}
+
+.modal-footer {
+    background-color: #ff5200;
+    border: none;
+}
+
+.modal input {
+    background-color: transparent;
+    outline: none;
+    border-width: 4px;
+    border-radius: 40px;
+    border-color: white;
+    margin-top: 30px;
+    color: white;
+}
+
+.modal input:focus {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: white;
+    border-color: #ff3f00;
+}
+
+.modal input::placeholder{
+    color: white;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal a {
+    color: white;
+}
