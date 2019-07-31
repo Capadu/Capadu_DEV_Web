@@ -9,38 +9,233 @@
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="/AdminLTE/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/Plugins/Bootstrap/bootstrap.min.css">
     <!-- Loader -->
     <link rel="stylesheet" href="/Plugins/Screen_Loader/loader.css">
 
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-    <!-- JS loader -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Plugins/fontawesome/css/all.css">
+
+    <!-- Custom styles for this page -->
+    <link href="/css/main/contact_form.css" rel="stylesheet">
+    <link href="/css/main/main.css" rel="stylesheet">
 
 </head>
 
 
 <body>
 
+<!-- JS loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">Capadu</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Accesează un quiz</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Conectare</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Despre</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+<header class="masthead text-center text-white">
+    <div id="capadu"> <img src="/Common/img/logo.png"/> </div>
+
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">CAPADU</h1>
+            <h2 class="masthead-subheading mb-0">Platformă Educatională Flexibilă</h2>
+            <a href="/" class="btn btn-primary btn-xl rounded-pill mt-5">Accesează un quiz</a>
+        </div>
+    </div>
+
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+
+</header>
+
+<div id="shield">
+
+    <div class="col-container">
+
+        <div class="col" id="section1">
+
+            <div class="text-center">
+                <h1 class="text-white shield_title">Elevi</h1>
+                <a href="/" class="btn rounded-pill red text-white">Platforma Elevilor</a>
+                <p class="infotext text-white">Accesează platforma elevilor și parcurge un quiz creat de un profesor.</p>
+            </div>
+
+        </div>
+
+        <div class="col" id="section2">
+
+            <div class="text-center">
+                <h1 class="text-white shield_title">Profesori</h1>
+                <a href="/login" class="btn rounded-pill orange text-white">Platforma Profesorilor</a>
+                <p class="infotext text-white">Crează lecții interesante sau jocuri interactive pentru evaluarea cunoștințelor.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- About Section -->
+    <div class="container" id="about">
+        <h2 class="text-center infotext2" style="color: #bd0716;">Despre Capadu</h2>
+        <hr class="black_underline">
+        <div class="row">
+            <div class="col-lg-4 ml-auto">
+                <p class="infotext1">Capadu este o platforma educațională adresată atât elevilor cât și profesorilor. Aceasta oferă profesorilor posibilitatea să dețină o pagină online proprie unde pot posta articole și materiale accesebile tuturor.</p>
+            </div>
+            <div class="col-lg-4 mr-auto">
+                <p class="infotext1">De asemenea cu ajutorul acestei platforme, profesorii au posibilitatea să utilizeaze softul de evaluare interactiv prezentat sub forma unui joc pentru elevi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="features" id="features">
+
+        <div class="text-center">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="text-black infotext2" style="color: #bd0716;">Evaluare Capadu</h2>
+                    <hr class="black_underline">
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 my-auto">
+                        <div class="device-container">
+                            <div class="">
+                                <div class="device">
+                                    <div class="screen">
+                                        <img src="/Common/img/phone.png" class="img-fluid" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 my-auto">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="feature-item">
+                                        <i class="fa fa-mobile figurine" style="font-size:100px;color: #bd0716;"></i>
+                                        <h3>Compatibil cu dispozitivele mobile</h3>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="feature-item">
+                                        <i class="fa fa-brain figurine" style="font-size:100px;color: #bd0716;"></i>
+                                        <h3>Invatare interactiva</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle figurine" style="font-size:100px;color: #bd0716;"></i>
+                                        <h3>Lucru in echipa</h3>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="feature-item">
+                                        <i class="fab fa-accusoft figurine" style="font-size:100px;color: #bd0716;"></i>
+                                        <h3>Intrebari sunt setate de profesor</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="proiectul">
+
+        <div class="col-lg-8 text-center">
+            <h2 class="section-heading text-white">Proiectul Capadu</h2>
+            <hr class="white_underline">
+            <h6 class="text-white mb-4">Proiectul Capadu este realizat de HGMGames , Radu Mihalache. Scopul acestuia este sa ajute atat profesorii, dar mai ales elevii pentru ca experienta de invatare sa devina mai interesanta si captivanta.</h6>
+        </div>
+
+    </div>
+
+    <div id="contact">
+
+        <div class="container">
+
+            <h2 class="section-heading text-white text-center">Contact</h2>
+            <hr class="white_underline">
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label class="text-white" >Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                </div>
+
+                <div class="form-group">
+                    <label class="text-white" >Subject</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                </div>
+
+                <div class="form-group">
+                    <label class="text-white">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Trimite</button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
 
 
 <!-- jQuery 3 -->
-<script src="/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/Plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/Plugins/Bootstrap/bootstrap.min.js"></script>
 <!-- JS loader-->
 <script src="/Plugins/Screen_Loader/loader.js"></script>
 

@@ -1,0 +1,30 @@
+.contact-form input {
+    background-color: transparent;
+    outline: none;
+    border-width: 0 0 4px;
+}
+
+.contact-form input:focus {
+    background-color: transparent;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #202020
+}
+
+
+
+.contact-form textarea {
+    background-color: transparent;
+    outline: none;
+    border-width: 0 0 4px;
+}
+
+.contact-form textarea:focus {
+    background-color: transparent;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #202020
+}
+

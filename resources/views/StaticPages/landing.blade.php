@@ -9,36 +9,36 @@
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="/AdminLTE/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/Plugins/Bootstrap/bootstrap.min.css">
     <!-- Loader -->
     <link rel="stylesheet" href="/Plugins/Screen_Loader/loader.css">
 
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Plugins/fontawesome/css/all.css">
+
+    <!-- Custom styles for this page -->
     <link href="/css/landing/main.css" rel="stylesheet">
-
-    <!-- JS loader -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
 
 </head>
 
 
 <body>
 
+<!-- JS loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
 <div id="MainSection" class="container">
 
-    <img class="" src="/Common/logo.png"  width="280px" height="280px" />
+    <img class="" src="/Common/img/logo.png"  width="280px" height="280px" />
 
     <form action="">
 
@@ -57,11 +57,9 @@
 <div id="particles-js"></div>
 
 <!-- jQuery 3 -->
-<script src="/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/Plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/Plugins/Bootstrap/bootstrap.min.js"></script>
 <!-- JS loader-->
 <script src="/Plugins/Screen_Loader/loader.js"></script>
 
