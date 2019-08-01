@@ -22,7 +22,7 @@ class DynamicPagesController extends Controller
                 return view('DynamicPages.missing_page');
             }
             if ($page_master->redirected == 1) {
-                return redirect($page_master->redirecte_url);
+                return redirect($page_master->redirect_url);
             }
 
             return view('DynamicPages.route_page')->with('page_master', $page_master);
@@ -42,7 +42,7 @@ class DynamicPagesController extends Controller
                 return view('DynamicPages.missing_page');
             }
             if ($page_master->redirected == 1) {
-                return redirect($page_master->redirecte_url);
+                return redirect($page_master->redirect_url);
             }
 
             $own_pages = $page_master->pages;

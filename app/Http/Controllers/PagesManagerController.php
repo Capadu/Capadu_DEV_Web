@@ -11,7 +11,7 @@ use Session;
 class PagesManagerController extends Controller
 {
     public function index () {
-        $pages = Page::all();
+        $pages = Session::get('user')->pagemaster->pages;
 
         return view('TeacherPages.manage_pages')->with('pages', $pages);
     }

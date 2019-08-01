@@ -158,7 +158,7 @@
 
             <div class="form-group">
                 <label for="redirected_url">Redirect URL</label>
-                <input type="text" class="form-control" id="redirected_url" name="redirected_url" value="{{$user->pagemaster->redirect_url}}">
+                <input type="text" class="form-control" id="redirected_url" name="redirect_url" value="{{$user->pagemaster->redirect_url}}">
             </div>
 
             <div class="form-group">
