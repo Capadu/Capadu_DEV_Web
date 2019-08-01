@@ -152,10 +152,23 @@
 
 @section('custom-scripts')
 
+    @include('mceImageUpload::upload_form')
+
     <script src="/Plugins/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
             selector:'#content',
+            height: 300,
+            theme: 'modern',
+            plugins: [
+                'image imagetools'
+            ],
+            toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            relative_urls: false,
+            file_browser_callback: function(field_name, url, type, win) {
+                // trigger file upload form
+                if (type == 'image') $('#formUpload input').click();
+            }
         });
 
     </script>
