@@ -48,3 +48,15 @@
     });
 
 //End Teacher Pages
+
+
+//Start Dynamic Pages
+
+Route::group(['prefix' => 'page'], function () {
+
+    Route::get('/{prof_route}', 'DynamicPagesController@route');
+    Route::get('/{prof_route}/{page_route}', 'DynamicPagesController@page');
+
+});
+
+//End Dynamic Pages
