@@ -112,6 +112,11 @@
                 <i class="fa fa-dashboard"></i> <span>Manage Pages</span>
             </a>
         </li>
+        <li>
+            <a href="page_manager/create">
+                <i class="fa fa-dashboard"></i> <span>Create New Page</span>
+            </a>
+        </li>
 
     </ul>
 

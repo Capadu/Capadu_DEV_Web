@@ -28,10 +28,15 @@ class PagesMasterController extends Controller
             'visible' => 'required|integer|max:1',
             'redirected' => 'required|integer|max:1',
             'redirect_url' => 'string|max:255',
-            'route' => 'string|max:255'
+            'route' => 'alpha_dash|max:255'
         ]);
 
-        if (count(Page_Master::where("route", "=", $request->route)->get()) != 0) {
+        $DBuser = User::where("id", "=", Session::get("user")->id)->first();
+
+        if (Page_Master::where("route", "=", $request->route)->first() != NULL &&
+            Page_Master::where("route", "=", $request->route)->first()->id != $DBuser->pagemaster->id &&
+            $request->route != NULL) {
+
             Session::flash("error", "Ruta exista deja!");
 
             return back();
