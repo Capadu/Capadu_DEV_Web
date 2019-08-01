@@ -89,31 +89,31 @@
 
         <li class="header">Capadu Tests</li>
         <li>
-            <a href="../dashboard">
+            <a href="../../dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
 
         <li class="header">My Files</li>
         <li>
-            <a href="../dashboard">
+            <a href="../../dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
 
         <li class="header">My Web Pages</li>
         <li>
-            <a href="../page_settings">
+            <a href="../../page_settings">
                 <i class="fa fa-dashboard"></i> <span>Page Settings</span>
             </a>
         </li>
         <li>
-            <a href="../page_manager">
+            <a href="../../page_manager">
                 <i class="fa fa-dashboard"></i> <span>Manage Pages</span>
             </a>
         </li>
         <li>
-            <a href="create">
+            <a href="../create">
                 <i class="fa fa-dashboard"></i> <span>Create New Page</span>
             </a>
         </li>
@@ -139,14 +139,31 @@
             </div>
 
             <div class="form-group">
-                <label for="contact">Content</label>
-                <textarea class="form-control" id="contact" rows="7" name="content_data">{{$page->content}}
-                </textarea>
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" rows="7" name="content_data"></textarea>
             </div>
 
             <button type="submit">Submit</button>
 
         </form>
     </div>
+
+@endsection
+
+@section('custom-scripts')
+
+    <script src="/Plugins/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'#content',
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            tinymce.get('content').setContent('{!! $page->content !!}');
+        });
+    </script>
 
 @endsection

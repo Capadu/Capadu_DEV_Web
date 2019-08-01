@@ -139,13 +139,25 @@
             </div>
 
             <div class="form-group">
-                <label for="contact">Content</label>
-                <textarea class="form-control" id="contact" rows="7" name="content_data"></textarea>
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" rows="7" name="content_data"></textarea>
             </div>
 
             <button type="submit">Submit</button>
 
         </form>
     </div>
+
+@endsection
+
+@section('custom-scripts')
+
+    <script src="/Plugins/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'#content',
+        });
+
+    </script>
 
 @endsection
