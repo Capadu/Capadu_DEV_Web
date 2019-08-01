@@ -81,7 +81,7 @@
     <ul class="sidebar-menu" data-widget="tree">
 
         <li class="header">Profesor</li>
-        <li class="active">
+        <li>
             <a href="dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
@@ -102,7 +102,7 @@
         </li>
 
         <li class="header">My Web Pages</li>
-        <li>
+        <li class="active">
             <a href="page_settings">
                 <i class="fa fa-dashboard"></i> <span>Page Settings</span>
             </a>

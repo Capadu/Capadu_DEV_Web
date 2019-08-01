@@ -35,6 +35,14 @@
 
         Route::get('/dashboard', 'PagesController@dashboard');
 
+        Route::get('/page_settings', 'PagesMasterController@index');
+        Route::post('/page_settings', 'PagesMasterController@edit');
+
+        Route::get('/page_manager', 'PagesManagerController@index');
+        Route::get('/page_manager/{id}', 'PagesManagerController@read');
+        Route::post('/page_manager/{id}', 'PagesManagerController@edit');
+        Route::post('/page_manager/{id}', 'PagesManagerController@delete');
+
     });
 
 //End Teacher Pages

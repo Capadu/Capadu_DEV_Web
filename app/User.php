@@ -11,4 +11,8 @@ class User extends Model
     ];
 
     protected $table="users";
+
+    public function pagemaster(){
+        return $this->hasOne('App\Page_Master', 'user_id');
+    }
 }
