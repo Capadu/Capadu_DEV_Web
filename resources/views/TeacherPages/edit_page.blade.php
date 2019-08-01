@@ -175,7 +175,12 @@
 
     <script>
         $(document).ready(function() {
-            tinymce.get('content').setContent('{!! $page->content !!}');
+            @php
+                $content = $page->content;
+                $content=str_replace("\r\n","",$content);
+            @endphp
+
+            tinymce.get('content').setContent('{!! $content !!}');
         });
     </script>
 

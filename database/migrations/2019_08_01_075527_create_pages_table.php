@@ -17,7 +17,7 @@ class CreatePagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('route');
-            $table->string('content');
+            $table->longText('content');
 
             $table->unsignedInteger('page_master_id');
 

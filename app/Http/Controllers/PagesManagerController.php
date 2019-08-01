@@ -26,7 +26,7 @@ class PagesManagerController extends Controller
         $request->validate([
             'route' => 'required|alpha_dash|max:255',
             'title' => 'required|string|max:255',
-            'content_data' => 'required|string|max:10000'
+            'content_data' => 'required|string'
         ]);
 
         $DBuser = User::where("id", "=", Session::get("user")->id)->first();
@@ -63,7 +63,7 @@ class PagesManagerController extends Controller
         $request->validate([
             'route' => 'required|alpha_dash|max:255',
             'title' => 'required|string|max:255',
-            'content_data' => 'required|string|max:10000'
+            'content_data' => 'required|string'
         ]);
 
         $DBuser = User::where("id", "=", Session::get("user")->id)->first();
