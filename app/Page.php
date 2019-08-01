@@ -11,4 +11,8 @@ class Page extends Model
     ];
 
     protected $table="pages";
+
+    public function master(){
+        return $this->belongsTo('App\Page_Master', 'page_master_id');
+    }
 }

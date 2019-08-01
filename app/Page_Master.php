@@ -13,6 +13,6 @@ class Page_Master extends Model
     protected $table="pages_master";
 
     public function pages(){
-        return $this->hasOne('App\Page', 'page_master_id');
+        return $this->hasMany('App\Page', 'page_master_id');
     }
 }

@@ -39,9 +39,11 @@
         Route::post('/page_settings/edit/{id}', 'PagesMasterController@edit');
 
         Route::get('/page_manager', 'PagesManagerController@index');
-        Route::get('/page_manager/{id}', 'PagesManagerController@read');
-        Route::post('/page_manager/{id}', 'PagesManagerController@edit');
-        Route::post('/page_manager/{id}', 'PagesManagerController@delete');
+        Route::get('/page_manager/create', 'PagesManagerController@create');
+        Route::get('/page_manager/read/{id}', 'PagesManagerController@read');
+        Route::post('/page_manager/add', 'PagesManagerController@add');
+        Route::post('/page_manager/edit/{id}', 'PagesManagerController@edit');
+        Route::post('/page_manager/delete/{id}', 'PagesManagerController@delete');
 
     });
 
