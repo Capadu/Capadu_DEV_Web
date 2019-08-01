@@ -119,6 +119,51 @@
 
 @section('content')
 
+    <div class="container">
+        <form method="post" action="page_settings/edit/{{$user->pagemaster->id}}">
+            @csrf
 
+            <div class="form-group">
+                <label for="visible">Visible</label>
+                <select class="form-control" id="visible" name="visible">
+                    @if ($user->pagemaster->visible == 0)
+                        <option value="0" selected="selected" >No</option>
+                        <option value="1">Yes</option>
+                    @else
+                        <option value="0">No</option>
+                        <option value="1" selected="selected">Yes</option>
+                    @endif
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="redirected">Redirected</label>
+                <select class="form-control" id="redirected" name="redirected">
+                    @if ($user->pagemaster->redirected == 0)
+                        <option value="0" selected="selected">No</option>
+                        <option value="1">Yes</option>
+                    @else
+                        <option value="0">No</option>
+                        <option value="1" selected="selected">Yes</option>
+                    @endif
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="redirected_url">Redirect URL</label>
+                <input type="text" class="form-control" id="redirected_url" name="redirected_url" value="{{$user->pagemaster->redirect_url}}">
+            </div>
+
+            <div class="form-group">
+                <label for="route">Route</label>
+                <input type="text" class="form-control" id="route" name="route" value="{{$user->pagemaster->route}}">
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
 
 @endsection

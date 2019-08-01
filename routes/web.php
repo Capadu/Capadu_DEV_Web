@@ -36,7 +36,7 @@
         Route::get('/dashboard', 'PagesController@dashboard');
 
         Route::get('/page_settings', 'PagesMasterController@index');
-        Route::post('/page_settings', 'PagesMasterController@edit');
+        Route::post('/page_settings/edit/{id}', 'PagesMasterController@edit');
 
         Route::get('/page_manager', 'PagesManagerController@index');
         Route::get('/page_manager/{id}', 'PagesManagerController@read');
