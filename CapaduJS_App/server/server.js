@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
         //Check if passed tocken is valid
         var getJSON = require('get-json');
     
-        getJSON('http://capadu/api/validator/' + data.tocken, function(error, response){
+        getJSON('http://192.168.10.150:8000/api/validator/' + data.tocken, function(error, response){
             if (error) {
                 socket.emit('InvalidTocken');
             }
@@ -474,7 +474,7 @@ io.on('connection', (socket) => {
 
                 var getJSON = require('get-json');
 
-                getJSON('http://capadu/api/sendcapadus/' + tocken, function(error, response){
+                getJSON('http://192.168.10.150:8000/api/sendcapadus/' + tocken, function(error, response){
                     for (var i = 0; i < response.length ; i++) {
                         CapadusList[response[i].capa_id] = 1;
                     }
@@ -522,7 +522,7 @@ io.on('connection', (socket) => {
                 //SEND POST REQUEST TO LARAVEL
 
 
-                requestify.post('http://capadu/api/recivecapadus/' + data.tocken, {
+                requestify.post('http://192.168.10.150:8000/api/recivecapadus/' + data.tocken, {
                     id: data.id
                 });
 

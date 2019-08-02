@@ -89,8 +89,8 @@
 
         <li class="header">Capadu Tests</li>
         <li>
-            <a href="dashboard">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->tokens->connection_token }}">
+                <i class="fa fa-dashboard"></i> <span>Create Capadu</span>
             </a>
         </li>
 
