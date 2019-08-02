@@ -266,3 +266,11 @@
 
 
 @endsection
+
+@section('custom-scripts')
+
+    <!-- RealtimeForm-->
+    <script src="/Plugins/ajaxForm/jquery.form.js"></script>
+    <script src="/Plugins/ajaxForm/plugin.js"></script>
+
+@endsection

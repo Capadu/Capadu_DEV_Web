@@ -175,7 +175,6 @@
 
 @section('custom-scripts')
 
-
 <script>
     $(function () {
         $('#pages').DataTable({
