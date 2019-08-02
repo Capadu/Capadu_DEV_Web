@@ -80,7 +80,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
 
-        <li class="header">Profesor</li>
+        <li class="header">Main</li>
         <li>
             <a href="dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -89,32 +89,37 @@
 
         <li class="header">Capadu Tests</li>
         <li>
-            <a href="dashboard">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->tokens->connection_token }}">  
+                <i class="fa fa-magic"></i> <span>Create Capadu</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://192.168.10.150:3000/create/?tocken={{ Session::get('user')->tokens->connection_token }}">
+                <i class="fa fa-play"></i> <span>Start Capadu</span>
             </a>
         </li>
 
         <li class="header">My Files</li>
         <li>
-            <a href="dashboard">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <a href="file_manager">
+                <i class="fa fa-file"></i> <span>File Manager</span>
             </a>
         </li>
 
         <li class="header">My Web Pages</li>
         <li class="active">
             <a href="page_settings">
-                <i class="fa fa-dashboard"></i> <span>Page Settings</span>
+                <i class="fa fa-cog"></i> <span>Page Settings</span>
             </a>
         </li>
         <li>
             <a href="page_manager">
-                <i class="fa fa-dashboard"></i> <span>Manage Pages</span>
+                <i class="fa fa-globe"></i> <span>Manage Pages</span>
             </a>
         </li>
         <li>
             <a href="page_manager/create">
-                <i class="fa fa-dashboard"></i> <span>Create New Page</span>
+                <i class="fa fa-plus"></i> <span>Create New Page</span>
             </a>
         </li>
 
