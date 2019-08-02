@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Creator | Capadu</title>
+        <link rel = "stylesheet" href = "../../css/quizCreator.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel='shortcut icon' type='image/x-icon' href='../../img/favicon.ico' />
+
+    </head>
+    <body onload = "setBGColor()">
+
+        <center>
+
+        <div id="formular">
+
+            <img src="../../img/favicon.ico">
+
+            <h1 id = "title"><i>Capadu Quiz Creator Studio</i></h1>
+            
+            <input id = "name" type = "text" name="name" placeholder="Titlu.." autofocus/>
+            
+            <br><br><br><br><br>
+
+            <div id = "allQuestions">
+                <div id="question-field">
+                    <input class = "question" id = "q1" type = "text" placeholder="Intrebarea 1:" autofocus/>
+                    <br>
+                    <br>
+                    <label>Raspunsul 1: </label>
+                    <input id = "1a1" type = "text" autofocus/>
+                    <label>Raspunsul 2: </label>
+                    <input id = "1a2" type = "text" autofocus/>
+                    <br>
+                    <br>
+                    <label>Raspunsul 3: </label>
+                    <input id = "1a3"  type = "text"autofocus/>
+                    <label>Raspunsul 4: </label>
+                    <input id = "1a4"  type = "text" autofocus/>
+                    <br>
+                    <br>
+                    <label><p><b>Raspunsul Corect (1-4) :</b></p></label>
+                    <br>
+                    <input class = "correct" id = "correct1"  type = "number" value="1" min="1" max="4" autofocus/>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+
+        </div>
+        
+        
+        <button id="adaugare" onclick = "addQuestion()">Adauga o intrebare</button>
+        
+        <br>
+        <br>
+        
+        <div class="form-field">
+            <button id="creare" onclick = "updateDatabase()">Creare Quiz</button>
+        </div>
+        
+        <br>
+        
+        <button id="refacere" onclick = 'cancelQuiz()'>Intoarce-te la panoul de control</button>
+        
+        <script src = "../../socket.io/socket.io.js"></script>
+        <script src = "../../js/libs/jqueryLibrary.js"></script>
+        <script src = "../../js/libs//deparam.js"></script>
+        <script src = "../../js/quizCreator.js"></script>
+    </body>
+</html>

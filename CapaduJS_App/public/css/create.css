@@ -1,0 +1,42 @@
+body {
+    background-image: url("../img/mozaic_dark.png");
+}
+#title{
+    color: white;
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+}
+#subtitle{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+#link{
+    color: white;
+}
+#game-list{
+    text-align: center;
+}
+#back{
+    color: white;
+    text-align: center;
+}
+#gameButton{
+    font-size:60px;
+    width: 80vw;
+    margin-bottom:30px;
+    background-color:rgb(255, 255, 255);
+    border-style: none;
+    transition: 0.3s;
+}
+
+#gameButton:hover {
+    color: white;
+    background-color:rgb(255, 81, 0);
+}
+
+#gameButton:hover{
+    cursor: pointer;
+}

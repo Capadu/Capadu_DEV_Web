@@ -1,0 +1,50 @@
+body {
+    background-image: url("../img/mozaic_dark.png");
+}
+#title{
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+#gamePinText{
+    text-align: center;
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 50px;
+}
+#players{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 20px;
+    resize: none;
+}
+
+#start{
+    background-color: rgb(230, 34, 0);
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#cancel {
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+}
