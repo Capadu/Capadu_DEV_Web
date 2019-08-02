@@ -50,7 +50,7 @@
 
     </form>
 
-    <p>Creaza o camera gratis la platforma <a href="/main"> Capadu </a> </p>
+    <p>Creeză o cameră gratis la platforma <a href="/main"> Capadu </a> </p>
 
 </div>
 

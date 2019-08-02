@@ -62,7 +62,7 @@
                             <input id="register_email" class="form-control" type="email" placeholder="Email" name="email">
                             <input id="register_password" class="form-control" type="password" placeholder="Parola" name="password">
                             <input id="register_password_confirmation" class="form-control" type="password" placeholder="Repeata Parola" name="password_confirmation">
-                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Inregistrare</button>
+                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Înregistrare</button>
                         </form>
 
                     </div>
@@ -71,12 +71,12 @@
 
             <div class="modal-footer">
                 <div class="forgot login-footer text-white">
-                        <span>Vreti sa
-                             <a href="javascript: showRegisterForm();">creeati un cont</a>
+                        <span>Vreți să
+                             <a href="javascript: showRegisterForm();">creeați un cont</a>
                         ?</span>
                 </div>
                 <div class="forgot register-footer text-white" style="display:none">
-                    <span>Aveti deja un cont ?</span>
+                    <span>Aveți deja un cont ?</span>
                     <a href="javascript: showLoginForm();">Conectare</a>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">Conectaere</a>
+                        <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">Conectare</a>
                     </li>
                 @endif
 
@@ -186,7 +186,7 @@
         <hr class="black_underline">
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="infotext1">Capadu este o platforma educațională adresată atât elevilor cât și profesorilor. Aceasta oferă profesorilor posibilitatea să dețină o pagină online proprie unde pot posta articole și materiale accesebile tuturor.</p>
+                <p class="infotext1">Capadu este o platformă educațională adresată atât elevilor cât și profesorilor. Aceasta oferă profesorilor posibilitatea să dețină o pagină online proprie unde pot posta articole și materiale accesebile tuturor.</p>
             </div>
             <div class="col-lg-4 mr-auto">
                 <p class="infotext1">De asemenea cu ajutorul acestei platforme, profesorii au posibilitatea să utilizeaze softul de evaluare interactiv prezentat sub forma unui joc pentru elevi.</p>
@@ -226,7 +226,7 @@
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fa fa-brain figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Invatare interactiva</h3>
+                                        <h3>Invățare interactivă</h3>
                                     </div>
                                 </div>
                             </div>
@@ -234,13 +234,13 @@
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fas fa-check-circle figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Lucru in echipa</h3>
+                                        <h3>Lucru în echipă</h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fab fa-accusoft figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Intrebari sunt setate de profesor</h3>
+                                        <h3>Întrebarile sunt setate de profesor</h3>
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +257,7 @@
         <div class="col-lg-8 text-center">
             <h2 class="section-heading text-white">Proiectul Capadu</h2>
             <hr class="white_underline">
-            <h6 class="text-white mb-4">Proiectul Capadu este realizat de HGMGames , Radu Mihalache. Scopul acestuia este sa ajute atat profesorii, dar mai ales elevii pentru ca experienta de invatare sa devina mai interesanta si captivanta.</h6>
+            <h6 class="text-white mb-4">Proiectul Capadu este realizat de HGMGames , Radu Mihalache, Sebastian Luca. Scopul acestuia este să ajute atât profesorii, dar mai ales elevii pentru ca experiența de învățare să devină mai interesantă și captivantă.</h6>
         </div>
 
     </div>
