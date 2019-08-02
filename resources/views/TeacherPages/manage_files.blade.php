@@ -177,7 +177,7 @@
 
                 <div class="card-body text-center">
                     <div class="input-group mb-3">
-                        <form method="post" action="/action-upload" enctype="multipart/form-data">
+                        <form method="post" action="file_manager/upload" enctype="multipart/form-data">
                             @csrf
 
                             Selecteaza un material:
@@ -270,7 +270,8 @@
 @section('custom-scripts')
 
     <!-- RealtimeForm-->
-    <script src="/Plugins/ajaxForm/jquery.form.js"></script>
+<!--    <script src="/Plugins/ajaxForm/jquery.form.js"></script>
     <script src="/Plugins/ajaxForm/plugin.js"></script>
+-->
 
 @endsection

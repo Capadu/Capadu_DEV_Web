@@ -17,4 +17,13 @@ class FilesController extends Controller
 
         return view('TeacherPages.manage_files')->with('files_storage', $files_storage);
     }
+
+    public function upload (Request $request) {
+        $request->validate([
+            'fileToUpload' => 'required',
+        ]);
+
+        $file = $request->file('fileToUpload');
+        return response()->download($file);
+    }
 }
