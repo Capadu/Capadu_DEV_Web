@@ -42,7 +42,7 @@
                     <li class="user-footer">
 
                         <div class="pull-left">
-                            <a href="/" type="submit" class="btn btn-danger">Capadu</a>
+                            <a href="/" type="submit" class="btn btn-warning">Capadu</a>
                         </div>
 
                         <div class="pull-right">
