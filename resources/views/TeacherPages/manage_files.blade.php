@@ -243,7 +243,7 @@
                                 </form>
 
                                 
-                                <a href="http://capadu/action-download/{{$file->route}}" class="btn btn-primary btn-block">Descarca</a>
+                                <a href="file_manager/download/{{$file->route}}" class="btn btn-primary btn-block">Descarca</a>
                                 
 
                             </div>
@@ -270,8 +270,8 @@
 @section('custom-scripts')
 
     <!-- RealtimeForm-->
-<!--    <script src="/Plugins/ajaxForm/jquery.form.js"></script>
+    <script src="/Plugins/ajaxForm/jquery.form.js"></script>
     <script src="/Plugins/ajaxForm/plugin.js"></script>
--->
+
 
 @endsection

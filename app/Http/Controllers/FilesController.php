@@ -54,8 +54,19 @@ class FilesController extends Controller
         return;
     }
 
-    public function download (Request $request) {
+    public function download (Request $request, $route) {
+        $file = File::where("route", "=", $route)->first();
 
+        $encryptedContent = Storage::get($route.'.dat');
+        $decryptedContent = decrypt($encryptedContent);
+
+        $aux_name = time().'_'.$file->file_name;
+        Storage::put($aux_name, $decryptedContent);
+
+        $file_path = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
+        $file_path = $file_path.$aux_name;
+
+        return response()->download($file_path)->deleteFileAfterSend(true);
     }
 
     public function delete (Request $request, $route) {

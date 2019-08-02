@@ -42,7 +42,7 @@
     
         complete: function(xhr) {
     
-            window.location.href = "/upload";
+            window.location.href = "/file_manager";
     
         }
     

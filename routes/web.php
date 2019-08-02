@@ -47,7 +47,7 @@
 
         Route::get('/file_manager', 'FilesController@index');      
         Route::post('/file_manager/upload', 'FilesController@upload');
-        Route::post('/file_manager/download/{route}', 'FilesController@download');      
+        Route::get('/file_manager/download/{route}', 'FilesController@download');      
         Route::post('/file_manager/delete/{route}', 'FilesController@delete'); 
 
     });
