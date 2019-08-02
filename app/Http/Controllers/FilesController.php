@@ -57,4 +57,10 @@ class FilesController extends Controller
     public function download (Request $request) {
 
     }
+
+    public function delete (Request $request, $route) {
+        $file = File::where("route", "=", $route)->first();
+        Storage::delete($file->route.'.dat');
+        $file->delete();
+    }
 }

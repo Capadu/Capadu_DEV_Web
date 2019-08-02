@@ -236,7 +236,7 @@
 
                             <div class="custom-row">
                             
-                                <form method="post" action="/action-delete/{{$file->ruta}}">
+                                <form method="post" action="file_manager/delete/{{$file->route}}">
                                     @csrf
 
                                     <input type="submit" class="btn btn-primary btn-block" value="Sterge">
