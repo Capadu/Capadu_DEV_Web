@@ -19,4 +19,8 @@ class User extends Model
     public function filestorage(){
         return $this->hasOne('App\File_Storage', 'user_id');
     }
+
+    public function tokens(){
+        return $this->hasOne('App\User_Api_Token', 'user_id');
+    }
 }

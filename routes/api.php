@@ -13,6 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+/* CapaPP Connections */
+
+//validator
+
+Route::get('validator/{token}', 'AppComunicator@app_validate');
+
+//recivecapadus
+
+Route::post('recivecapadus/{token}', 'AppComunicator@app_recivecapadus');
+
+//sendcapadus
+
+Route::get('sendcapadus/{token}', 'AppComunicator@app_sendcapadus');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Redirect,Response;
 
 use App\User;
+use App\User_Api_Token;
 use App\Page_Master;
 use App\File_Storage;
 use Session;
@@ -61,6 +62,11 @@ class Registration extends Controller
         $file_storage->user_id = $user->id;
         $file_storage->total_space = env("USER_STORAGE_CAPACITY", 50);
         $file_storage->save();
+
+        $user_api_token = new User_Api_Token();
+        $user_api_token->user_id = $user->id;
+        $user_api_token->connection_token = sha1(time() + rand());
+        $user_api_token->save();
 
         Session::put("user", $user);
 
