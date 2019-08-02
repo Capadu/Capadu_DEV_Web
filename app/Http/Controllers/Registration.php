@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Redirect,Response;
 
 use App\User;
+use App\Page_Master;
+use App\File_Storage;
 use Session;
 use Validator;
 
@@ -50,6 +52,15 @@ class Registration extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
+
+        $page_master = new Page_Master();
+        $page_master->user_id = $user->id;
+        $page_master->save();
+
+        $file_storage = new File_Storage();
+        $file_storage->user_id = $user->id;
+        $file_storage->total_space = env("USER_STORAGE_CAPACITY", 50);
+        $file_storage->save();
 
         Session::put("user", $user);
 

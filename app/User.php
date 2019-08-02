@@ -15,4 +15,8 @@ class User extends Model
     public function pagemaster(){
         return $this->hasOne('App\Page_Master', 'user_id');
     }
+
+    public function filestorage(){
+        return $this->hasOne('App\File_Storage', 'user_id');
+    }
 }

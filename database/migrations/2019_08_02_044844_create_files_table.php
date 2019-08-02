@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('route');
-            $table->longText('content');
+            $table->string('file_name');
+            $table->string('storrage_key')->unique();
+            $table->string('route')->unique();
+            $table->unsignedInteger('file_size');
 
-            $table->unsignedInteger('page_master_id');
+            $table->unsignedInteger('files_storage_id');
 
-            $table->foreign('page_master_id')
-                ->references('id')->on('pages_master')
+            $table->foreign('files_storage_id')
+                ->references('id')->on('files_storage')
                 ->onDelete('cascade')
                 ->onUpdate('no action');
 
@@ -37,6 +38,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('files');
     }
 }

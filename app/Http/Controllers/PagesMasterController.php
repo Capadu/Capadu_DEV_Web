@@ -12,12 +12,6 @@ class PagesMasterController extends Controller
 {
     public function index () {
         $DBuser = User::where("id", "=", Session::get("user")->id)->first();
-        if (empty($DBuser->pagemaster)) {
-            $page_master = new Page_Master();
-            $page_master->user_id = Session::get("user")->id;
-            $page_master->save();
-        }
-        $DBuser = User::where("id", "=", Session::get("user")->id)->first();
 
         return view('TeacherPages.page_settings')->with('user', $DBuser);
     }

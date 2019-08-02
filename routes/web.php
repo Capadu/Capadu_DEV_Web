@@ -45,6 +45,8 @@
         Route::post('/page_manager/edit/{id}', 'PagesManagerController@edit');
         Route::post('/page_manager/delete/{id}', 'PagesManagerController@delete');
 
+        Route::get('/file_manager', 'FilesController@index');        
+
     });
 
 //End Teacher Pages
