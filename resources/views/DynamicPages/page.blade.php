@@ -44,7 +44,7 @@
     </div> 
 </div>
 
-<div class="page_content">
+<div class="conteint-page container-fluid">
     {!! $page->content !!}
 </div>
 
