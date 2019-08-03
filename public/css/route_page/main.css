@@ -1,0 +1,49 @@
+.body {
+    background-color: #ffd2c6;
+}
+
+.head {
+    width: 100vw;
+    height: 50vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(rgb(255, 0, 0)), to(#ff9900)) fixed !important;
+    position: relative;
+}
+
+.user_section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    color: white;
+}
+
+.user_section i {
+    font-size: 160px;
+}
+
+.navigation_menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.navigation_menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.center_children {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.page-linker {
+    margin: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 40px;
+    color: white;
+}

@@ -15,4 +15,7 @@ class Page_Master extends Model
     public function pages(){
         return $this->hasMany('App\Page', 'page_master_id');
     }
+    public function user(){
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }
