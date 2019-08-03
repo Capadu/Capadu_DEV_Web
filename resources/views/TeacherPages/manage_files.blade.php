@@ -201,7 +201,7 @@
         
         <div class="table-responsive">
 
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="files" width="100%" cellspacing="0">
                 <thead>
                 <tr>
                     <th>Nume</th>
@@ -269,5 +269,16 @@
     <!-- RealtimeForm-->
     <script src="/Plugins/ajaxForm/jquery.form.js"></script>
     <script src="/Plugins/ajaxForm/plugin.js"></script>
+
+    <script>
+
+        $(function () {
+            $('#files').DataTable({
+                "scrollX": true
+            });
+
+        });
+
+    </script>
 
 @endsection

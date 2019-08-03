@@ -129,7 +129,8 @@
 
 @section('content')
 
-    <div class="container">
+    <section class="content">
+
         <form method="post" action="../edit/{{$page->id}}">
             @csrf
 
@@ -151,7 +152,8 @@
             <button type="submit">Submit</button>
 
         </form>
-    </div>
+        
+    </section>
 
 @endsection
 
