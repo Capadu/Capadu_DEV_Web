@@ -42,6 +42,13 @@
         <i class="far fa-user-circle"></i> 
         <h1>{{$page_master->user->nume}}</h1>
     </div> 
+    <div class="search_bar">
+        <form>
+            <input type="text" name="search" placeholder="Search" autofocus/>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    
 </div>
 
 

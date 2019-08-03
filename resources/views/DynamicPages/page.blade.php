@@ -42,6 +42,12 @@
         <i class="fa fa-globe"></i> 
         <h1>{{$page->title}}</h1>
     </div> 
+    <div class="search_bar">
+        <form>
+            <input type="text" name="search" placeholder="Search" autofocus/>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
 </div>
 
 <div class="conteint-page container-fluid">

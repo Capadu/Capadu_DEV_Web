@@ -21,6 +21,10 @@
     font-size: 160px;
 }
 
+.page_section h1 {
+    margin-top: 10px;
+}
+
 .navigation_menu {
     position: absolute;
     top: 20px;
@@ -47,4 +51,38 @@
     align-items: center; 
     overflow-x: hidden;
     margin-top: 40px;
+}
+
+.search_bar {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #e90000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_bar input {
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.search_bar button {
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
 }
