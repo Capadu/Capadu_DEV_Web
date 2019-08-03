@@ -3,7 +3,7 @@
 }
 
 .head {
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     background: -webkit-gradient(linear, left top, right bottom, from(rgb(255, 0, 0)), to(#ff9900)) fixed !important;
     position: relative;
@@ -86,4 +86,9 @@
     -moz-box-shadow: none;
     box-shadow: none;
     cursor: pointer;
+}
+
+#contact {
+    background-color: #f05f40;
+    padding: 60px 0px 60px 0px;
 }

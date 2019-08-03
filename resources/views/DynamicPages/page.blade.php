@@ -52,8 +52,41 @@
     </div>
 </div>
 
-<div class="content-page container-fluid">
+<div class="container-fluid content-page">
     {!! $page->content !!}
+</div>
+
+<div id="contact">
+
+    <div class="container">
+
+        <h2 class="section-heading text-white text-center">Contact</h2>
+        <hr class="white_underline">
+
+        <form class="contact-form" method="POST" action="/feedback/website">
+            @csrf
+            
+            <div class="form-group">
+                <label class="text-white">{{ Lang::get('main.em') }}</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+
+            <div class="form-group">
+                <label class="text-white">{{ Lang::get('main.s') }}</label>
+                <input type="text" class="form-control" name="subiect">
+            </div>
+
+            <div class="form-group">
+                <label class="text-white">{{ Lang::get('main.m') }}</label>
+                <textarea class="form-control" name="mesaj" rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">{{ Lang::get('main.t') }}</button>
+
+        </form>
+
+    </div>
+
 </div>
 
 <!-- jQuery 3 -->
