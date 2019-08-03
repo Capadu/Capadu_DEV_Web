@@ -36,7 +36,7 @@
     <div class="loader-section section-right"></div>
 </div>
 
-<div class="center_element"> <h1>Pagina nu exista</h1> </div>
+<div class="center_element"> <h1>Pagina nu există</h1> </div>
 
 <!-- jQuery 3 -->
 <script src="/Plugins/jquery/jquery.min.js"></script>
