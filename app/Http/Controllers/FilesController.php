@@ -94,6 +94,8 @@ class FilesController extends Controller
         $file->delete();
 
         $this->update_size($DBuser->filestorage->id);
+        
+        return;
     }
 
     function update_size ($id) {
@@ -107,5 +109,7 @@ class FilesController extends Controller
         $file_storage->used_space = $used_space;
         $file_storage->available_space = $file_storage->total_space - $used_space;
         $file_storage->save();
+
+        return;
     }
 }

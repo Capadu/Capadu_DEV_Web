@@ -269,7 +269,9 @@
             <h2 class="section-heading text-white text-center">Contact</h2>
             <hr class="white_underline">
 
-            <form class="contact-form" method="POST" action="/login">
+            <form class="contact-form" method="POST" action="/feedback/website">
+                @csrf
+                
                 <div class="form-group">
                     <label class="text-white">Email address</label>
                     <input type="email" class="form-control" name="email">

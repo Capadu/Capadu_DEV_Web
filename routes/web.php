@@ -65,3 +65,14 @@ Route::group(['prefix' => 'page'], function () {
 });
 
 //End Dynamic Pages
+
+//Start FeedBack
+
+Route::group(['prefix' => 'feedback'], function () {
+
+    Route::post('/website', 'FeedbackController@website');
+    Route::post('/page', 'FeedbackController@page');
+
+});
+
+//End Dynamic Pages
