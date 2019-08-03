@@ -23,6 +23,12 @@ class FilesController extends Controller
 
     public function upload (Request $request) {
         $DBuser = User::where("id", "=", Session::get("user")->id)->first();
+        $server_used_space = 0;
+        $files_storage = File_Storage::all();
+        
+        foreach ($files_storage as $file_storage) {
+            $server_used_space = $server_used_space + $file_storage->used_space;
+        }
 
         $validator = Validator::make($request->all(), [
             'fileToUpload' => 'required',
@@ -34,6 +40,16 @@ class FilesController extends Controller
         }
 
         $file = $request->file('fileToUpload');
+        $file_size = ($file->getSize())/1000000;
+
+        if ($server_used_space + $file_size > env("SERVER_STORAGE_CAPACITY", 500)) {
+            Session::put("file_system_messege", "File Upload did not complete, not enaught space on server");
+        }
+
+        if ($DBuser->filestorage->used_space + $file_size > env("USER_STORAGE_CAPACITY", 500)) {
+            Session::put("file_system_messege", "File Upload did not complete, not enaught space of user");
+        }
+        
         $OriginalfileName = $file->getClientOriginalName();
         $RoutefileName = time();
         $fileContent = $file->get();
@@ -48,6 +64,8 @@ class FilesController extends Controller
         $file_record->file_size = ($file->getSize())/1000000;
         $file_record->files_storage_id = $DBuser->filestorage->id;
         $file_record->save();
+
+        $this->update_size($DBuser->filestorage->id);
 
         Session::put("file_system_messege", "File Upload Succesful");
 
@@ -70,8 +88,24 @@ class FilesController extends Controller
     }
 
     public function delete (Request $request, $route) {
+        $DBuser = User::where("id", "=", Session::get("user")->id)->first();
         $file = File::where("route", "=", $route)->first();
         Storage::delete($file->route.'.dat');
         $file->delete();
+
+        $this->update_size($DBuser->filestorage->id);
+    }
+
+    function update_size ($id) {
+        $file_storage = File_Storage::where("id", "=", $id)->first();
+        $used_space = 0;
+
+        foreach ($file_storage->files as $file) {
+            $used_space = $used_space + $file->file_size;
+        }
+
+        $file_storage->used_space = $used_space;
+        $file_storage->available_space = $file_storage->total_space - $used_space;
+        $file_storage->save();
     }
 }

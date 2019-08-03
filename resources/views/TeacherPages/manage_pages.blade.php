@@ -89,12 +89,12 @@
 
         <li class="header">Capadu Tests</li>
         <li>
-            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->tokens->connection_token }}">  
+            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->token->connection_token }}">  
                 <i class="fa fa-magic"></i> <span>Create Capadu</span>
             </a>
         </li>
         <li>
-            <a href="http://192.168.10.150:3000/create/?tocken={{ Session::get('user')->tokens->connection_token }}">
+            <a href="http://192.168.10.150:3000/create/?tocken={{ Session::get('user')->token->connection_token }}">
                 <i class="fa fa-play"></i> <span>Start Capadu</span>
             </a>
         </li>

@@ -20,7 +20,7 @@ class User extends Model
         return $this->hasOne('App\File_Storage', 'user_id');
     }
 
-    public function tokens(){
+    public function token(){
         return $this->hasOne('App\User_Api_Token', 'user_id');
     }
 }

@@ -89,12 +89,12 @@
 
         <li class="header">Capadu Tests</li>
         <li>
-            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->tokens->connection_token }}">  
+            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->token->connection_token }}">  
                 <i class="fa fa-magic"></i> <span>Create Capadu</span>
             </a>
         </li>
         <li>
-            <a href="http://192.168.10.150:3000/create/?tocken={{ Session::get('user')->tokens->connection_token }}">
+            <a href="http://192.168.10.150:3000/create/?tocken={{ Session::get('user')->token->connection_token }}">
                 <i class="fa fa-play"></i> <span>Start Capadu</span>
             </a>
         </li>
@@ -129,146 +129,138 @@
 
 @section('content')
 
-<div class="container">
 
-    <div class="text-center">
-        <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Ultima Actiune : </strong> 
+<section class="content">
+
+    @if(session()->has('file_system_messege'))
+        <div class="alert alert-warning alert-dismissible  show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session()->get('file_system_messege')}}
+
+        </div>
+    @endif
+
+  
+    <div class="box">
+        <div class="container">
+            <h6><b>Capacitate de stocare disponibila</b></h6>
+        
+            <div class="text-center">
+                <div class="input-group mb-3">
+                    <h5>Disponibil/Total : {{$files_storage->available_space."/".$files_storage->total_space}}</h5>
+                </div>
+
+                @php
+                    $percentage = 100 - $files_storage->used_space / $files_storage->total_space * 100;
+                @endphp
+
+                <div class="progress" style="width:80%">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$percentage.'%'}};">
+                        {{ $percentage.'%'}}
+                    </div>
+                </div>
+            
+            </div>
         </div>
     </div>
+    
+        
+    <div class="box">
+        
+        <div class="container">
+            <h6><b>Incarca materiale</b></h6>
 
-    <div class="row">
-        <div class="col-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6><b>Capacitate de stocare disponibila</b></h6>
-                </div>
-                <div class="card-body text-center">
-                    <div class="input-group mb-3">
-                        <h5>Disponibil/Total : {{$files_storage->available_space."/".$files_storage->total_space}}</h5>
-                    </div>
-
-                    @php
-                        $percentage = $files_storage->used_space / $files_storage->total_space * 100;
-                    @endphp
-
-                    <div class="input-group mb-3">
-                        <div class="progress" style="width:70%">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{$percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$percentage.'%'}};">
-                                {{ $percentage.'%'}}
-                            </div>
-                        </div>
-                    </div>
+            <div id="upload-progress" class="progress" style="width:60%; margin-left: 7px; margin-right: 7px; margin-top: 14px;">
+                <div id="upload-bar" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                    0%
                 </div>
             </div>
         </div>
 
-        <div class="col-6 ">
-            <div class="card shadow mb-4">
-            
-                <div class="card-header py-3">
-                    <div class="row">
-                        <h6 style="margin:10px;" ><b>Incarca materiale</b></h6>
+        
+        <div class="input-group container">
+            <form method="post" action="file_manager/upload" enctype="multipart/form-data">
+                @csrf
 
-                        <div id="upload-progress" class="progress" style="width:60%; margin-left: 7px; margin-right: 7px; margin-top: 14px;">
-                            <div id="upload-bar" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-                                0%
-                            </div>
-                        </div>
+                Selecteaza un material:
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" class="btn btn-primary btn-block" value="Incarca Materialul" name="submit" style="width:70%; margin-top: 10px;">
+            </form>
+        </div>
+        
+        <br>
+        
+    </div>
+    
 
-                    </div>
-                </div>
+    <div class="box">
 
-                <div class="card-body text-center">
-                    <div class="input-group mb-3">
-                        <form method="post" action="file_manager/upload" enctype="multipart/form-data">
-                            @csrf
+        <div class="text-center"><h6><b>Lista materialelor</b></h6></div>
+        
+        <div class="table-responsive">
 
-                            Selecteaza un material:
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" class="btn btn-primary btn-block" value="Incarca Materialul" name="submit" style="width:70%; margin-top: 10px;">
-                        </form>
-                    </div>
-                </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Marime</th>
+                    <th>Data Incarcarii</th>
+                    <th>Link</th>
+                    <th>Actiune</th>
+                </tr>
+                </thead>
+
+                <tfoot>
+                <tr>
+                    <th>Nume</th>
+                    <th>Marime</th>
+                    <th>Data Incarcarii</th>
+                    <th>Link</th>
+                    <th>Actiune</th>
+                </tr>
+                </tfoot>
+
+                <tbody>
                 
-            </div>
+                @foreach($files_storage->files as $file)
+                    <tr>
+                        <td>{{$file->file_name}}</td>
+                        <td>{{$file->file_size}} MB</td>
+                        <td>{{$file->created_at}}</td>
+                        <td>http://capadu/action-download/{{$file->route}}</td>
+                        <td>
+
+                        <div class="custom-row">
+                        
+                            <form method="post" action="file_manager/delete/{{$file->route}}">
+                                @csrf
+
+                                <input type="submit" class="btn btn-danger" value="Sterge">
+                            </form>
+
+                            <br>
+
+                            <a href="file_manager/download/{{$file->route}}" class="btn btn-warning">Descarca</a>
+                            
+
+                        </div>
+
+                        </td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+
+            </table>
+
         </div>
 
     </div>
 
-    <div class="col-13">
-        <div class="card shadow mb-4">
 
-            <div class="card-header text-center py-3">
-                <h6><b>Lista materialelor</b></h6>
-            </div>
-            
-            <div class="card-body">
-
-                <div class="table-responsive">
-
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>Nume</th>
-                        <th>Marime</th>
-                        <th>Data Incarcarii</th>
-                        <th>Link</th>
-                        <th>Actiune</th>
-                    </tr>
-                    </thead>
-
-                    <tfoot>
-                    <tr>
-                        <th>Nume</th>
-                        <th>Marime</th>
-                        <th>Data Incarcarii</th>
-                        <th>Link</th>
-                        <th>Actiune</th>
-                    </tr>
-                    </tfoot>
-
-                    <tbody>
-                    
-                    @foreach($files_storage->files as $file)
-                        <tr>
-                            <td>{{$file->file_name}}</td>
-                            <td>{{$file->file_size}} MB</td>
-                            <td>{{$file->created_at}}</td>
-                            <td>http://capadu/action-download/{{$file->route}}</td>
-                            <td>
-
-                            <div class="custom-row">
-                            
-                                <form method="post" action="file_manager/delete/{{$file->route}}">
-                                    @csrf
-
-                                    <input type="submit" class="btn btn-primary btn-block" value="Sterge">
-                                </form>
-
-                                
-                                <a href="file_manager/download/{{$file->route}}" class="btn btn-primary btn-block">Descarca</a>
-                                
-
-                            </div>
-
-                            </td>
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-
-                </table>
-
-                </div>
-
-            </div>
-        </div>
-    </div>    
-
-</div>
-
+</section>
 
 @endsection
 
@@ -277,6 +269,5 @@
     <!-- RealtimeForm-->
     <script src="/Plugins/ajaxForm/jquery.form.js"></script>
     <script src="/Plugins/ajaxForm/plugin.js"></script>
-
 
 @endsection

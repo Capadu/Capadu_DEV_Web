@@ -61,6 +61,7 @@ class Registration extends Controller
         $file_storage = new File_Storage();
         $file_storage->user_id = $user->id;
         $file_storage->total_space = env("USER_STORAGE_CAPACITY", 50);
+        $file_storage->available_space = env("USER_STORAGE_CAPACITY", 50);
         $file_storage->save();
 
         $user_api_token = new User_Api_Token();
