@@ -44,13 +44,14 @@
     align-items: center; 
 }
 
-.conteint-page {
+.content-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
     overflow-x: hidden;
-    margin-top: 40px;
+    margin-top: 80px;
+    width: 90%;
 }
 
 .search_bar {

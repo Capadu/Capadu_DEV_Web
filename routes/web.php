@@ -75,4 +75,10 @@ Route::group(['prefix' => 'feedback'], function () {
 
 });
 
-//End Dynamic Pages
+//End FeedBack
+
+//Start Search
+
+    Route::post('/search', 'SearchPagesController@pages');
+
+//End Search

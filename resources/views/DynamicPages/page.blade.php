@@ -43,14 +43,16 @@
         <h1>{{$page->title}}</h1>
     </div> 
     <div class="search_bar">
-        <form>
-            <input type="text" name="search" placeholder="Search" autofocus/>
+        <form method="post" action="/search">
+            @csrf
+
+            <input type="text" placeholder="Search" name="route" autofocus/>
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
 </div>
 
-<div class="conteint-page container-fluid">
+<div class="content-page container-fluid">
     {!! $page->content !!}
 </div>
 

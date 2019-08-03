@@ -130,6 +130,17 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
 
+                <li class="nav-item">
+                    <div class="search_bar">
+                        <form method="post" action="/search">
+                            @csrf
+
+                            <input type="text" placeholder="Search" name="route" autofocus/>
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </li>
+
             </ul>
         </div>
 

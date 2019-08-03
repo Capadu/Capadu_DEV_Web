@@ -304,6 +304,38 @@ header.masthead .bg-circle-3 {
     background: #e7e7e7;
 }
 
+.search_bar {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #2929296e;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_bar input {
+    font-size: 14px;
+    width: 100px;
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.search_bar button {
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
 @media (min-width: 992px) {
     header.masthead {
         padding-top: calc(10rem + 55px);
@@ -329,5 +361,11 @@ header.masthead .bg-circle-3 {
 
     .masthead-content a {
         font-size: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .search_bar {
+        width: 150px;
     }
 }
