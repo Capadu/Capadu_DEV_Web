@@ -172,7 +172,7 @@
 
             <div class="text-center">
                 <h1 class="text-white shield_title">Profesori</h1>
-                <a href="/login" class="btn rounded-pill orange text-white">Platforma Profesorilor</a>
+                <a href="javascript:void(0)" class="btn rounded-pill orange text-white" onclick="openAuthModal();">Platforma Profesorilor</a>
                 <p class="infotext text-white">Crează lecții interesante sau jocuri interactive pentru evaluarea cunoștințelor.</p>
             </div>
 

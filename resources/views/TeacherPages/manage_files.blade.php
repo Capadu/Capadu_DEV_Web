@@ -229,7 +229,7 @@
                         <td>{{$file->file_name}}</td>
                         <td>{{$file->file_size}} MB</td>
                         <td>{{$file->created_at}}</td>
-                        <td>http://capadu/action-download/{{$file->route}}</td>
+                        <td>http://192.168.10.150:8000/file_manager/download/{{$file->route}}</td>
                         <td>
 
                         <div class="custom-row">
