@@ -32,7 +32,7 @@
     <div class="modal-dialog login animated">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title text-white">Conectare</h4>
+                <h4 class="modal-title text-white">{{ Lang::get('main.Con') }}</h4>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
 
@@ -45,7 +45,7 @@
                         <form class="loginBox" onsubmit="event.preventDefault(); loginAjax();">
                             <input id="login_email" class="form-control" type="text" placeholder="Email" name="email">
                             <input id="login_password" class="form-control" type="password" placeholder="Parola" name="password">
-                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Conectare</button>
+                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">{{ Lang::get('main.Con') }}</button>
                         </form>
 
                     </div>
@@ -62,7 +62,7 @@
                             <input id="register_email" class="form-control" type="email" placeholder="Email" name="email">
                             <input id="register_password" class="form-control" type="password" placeholder="Parola" name="password">
                             <input id="register_password_confirmation" class="form-control" type="password" placeholder="Repeata Parola" name="password_confirmation">
-                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Înregistrare</button>
+                            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">{{ Lang::get('main.inregistrare1') }}</button>
                         </form>
 
                     </div>
@@ -71,13 +71,13 @@
 
             <div class="modal-footer">
                 <div class="forgot login-footer text-white">
-                        <span>Vreți să
-                             <a href="javascript: showRegisterForm();">creeați un cont</a>
-                        ?</span>
+                        <span>{{ Lang::get('main.vreti_sa') }}
+                             <a href="javascript: showRegisterForm();">{{ Lang::get('main.creeati') }}</a>
+                        </span>
                 </div>
                 <div class="forgot register-footer text-white" style="display:none">
-                    <span>Aveți deja un cont ?</span>
-                    <a href="javascript: showLoginForm();">Conectare</a>
+                    <span>{{ Lang::get('main.aveti') }}</span>
+                    <a href="javascript: showLoginForm();">{{ Lang::get('main.Con') }}</a>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Accesează un quiz</a>
+                    <a class="nav-link" href="/">{{ Lang::get('main.acces') }}</a>
                 </li>
 
                 @if(Session::has('user'))
@@ -118,12 +118,12 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">Conectare</a>
+                        <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openAuthModal();">{{ Lang::get('main.Con') }}</a>
                     </li>
                 @endif
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Despre</a>
+                    <a class="nav-link" href="#about">{{ Lang::get('main.despre') }}</a>
                 </li>
 
                 <li class="nav-item">
@@ -154,8 +154,8 @@
     <div class="masthead-content">
         <div class="container">
             <h1 class="masthead-heading mb-0">CAPADU</h1>
-            <h2 class="masthead-subheading mb-0">Platformă Educatională Flexibilă</h2>
-            <a href="/" class="btn btn-primary btn-xl rounded-pill mt-5">Accesează un quiz</a>
+            <h2 class="masthead-subheading mb-0">{{ Lang::get('main.flex') }}</h2>
+            <a href="/" class="btn btn-primary btn-xl rounded-pill mt-5">{{ Lang::get('main.acces') }}</a>
         </div>
     </div>
 
@@ -172,9 +172,9 @@
         <div class="col" id="section1">
 
             <div class="text-center">
-                <h1 class="text-white shield_title">Elevi</h1>
-                <a href="/" class="btn rounded-pill red text-white">Platforma Elevilor</a>
-                <p class="infotext text-white">Accesează platforma elevilor și parcurge un quiz creat de un profesor.</p>
+                <h1 class="text-white shield_title">{{ Lang::get('main.elevi') }}</h1>
+                <a href="/" class="btn rounded-pill red text-white">{{ Lang::get('main.plat_elevi') }}</a>
+                <p class="infotext text-white">{{ Lang::get('main.plat') }}</p>
             </div>
 
         </div>
@@ -182,9 +182,9 @@
         <div class="col" id="section2">
 
             <div class="text-center">
-                <h1 class="text-white shield_title">Profesori</h1>
-                <a href="javascript:void(0)" class="btn rounded-pill orange text-white" onclick="openAuthModal();">Platforma Profesorilor</a>
-                <p class="infotext text-white">Crează lecții interesante sau jocuri interactive pentru evaluarea cunoștințelor.</p>
+                <h1 class="text-white shield_title">{{ Lang::get('main.prof') }}</h1>
+                <a href="javascript:void(0)" class="btn rounded-pill orange text-white" onclick="openAuthModal();">{{ Lang::get('main.plat_prof') }}</a>
+                <p class="infotext text-white">{{ Lang::get('main.create') }}</p>
             </div>
 
         </div>
@@ -193,14 +193,14 @@
 
     <!-- About Section -->
     <div class="container" id="about">
-        <h2 class="text-center infotext2" style="color: #bd0716;">Despre Capadu</h2>
+        <h2 class="text-center infotext2" style="color: #bd0716;">{{ Lang::get('main.despre') }}</h2>
         <hr class="black_underline">
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="infotext1">Capadu este o platformă educațională adresată atât elevilor cât și profesorilor. Aceasta oferă profesorilor posibilitatea să dețină o pagină online proprie unde pot posta articole și materiale accesebile tuturor.</p>
+                <p class="infotext1">{{ Lang::get('main.text1') }}</p>
             </div>
             <div class="col-lg-4 mr-auto">
-                <p class="infotext1">De asemenea cu ajutorul acestei platforme, profesorii au posibilitatea să utilizeaze softul de evaluare interactiv prezentat sub forma unui joc pentru elevi.</p>
+                <p class="infotext1">{{ Lang::get('main.text2') }}</p>
             </div>
         </div>
     </div>
@@ -210,7 +210,7 @@
         <div class="text-center">
             <div class="container">
                 <div class="section-heading text-center">
-                    <h2 class="text-black infotext2" style="color: #bd0716;">Evaluare Capadu</h2>
+                    <h2 class="text-black infotext2" style="color: #bd0716;">{{ Lang::get('main.ev') }}</h2>
                     <hr class="black_underline">
                 </div>
                 <div class="row">
@@ -231,13 +231,13 @@
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fa fa-mobile figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Compatibil cu dispozitivele mobile</h3>
+                                        <h3>{{ Lang::get('main.mob') }}</h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fa fa-brain figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Invățare interactivă</h3>
+                                        <h3>{{ Lang::get('main.inv') }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -245,13 +245,13 @@
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fas fa-check-circle figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Lucru în echipă</h3>
+                                        <h3>{{ Lang::get('main.luc') }}</h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="feature-item">
                                         <i class="fab fa-accusoft figurine" style="font-size:100px;color: #bd0716;"></i>
-                                        <h3>Întrebarile sunt setate de profesor</h3>
+                                        <h3>{{ Lang::get('main.intre') }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -266,9 +266,9 @@
     <div id="proiectul">
 
         <div class="col-lg-8 text-center">
-            <h2 class="section-heading text-white">Proiectul Capadu</h2>
+            <h2 class="section-heading text-white">{{ Lang::get('main.pro') }}</h2>
             <hr class="white_underline">
-            <h6 class="text-white mb-4">Proiectul Capadu este realizat de HGMGames , Radu Mihalache, Sebastian Luca. Scopul acestuia este să ajute atât profesorii, dar mai ales elevii pentru ca experiența de învățare să devină mai interesantă și captivantă.</h6>
+            <h6 class="text-white mb-4">{{ Lang::get('main.text3') }}</h6>
         </div>
 
     </div>
@@ -284,21 +284,21 @@
                 @csrf
                 
                 <div class="form-group">
-                    <label class="text-white">Email address</label>
+                    <label class="text-white">{{ Lang::get('main.em') }}</label>
                     <input type="email" class="form-control" name="email">
                 </div>
 
                 <div class="form-group">
-                    <label class="text-white">Subiect</label>
+                    <label class="text-white">{{ Lang::get('main.s') }}</label>
                     <input type="text" class="form-control" name="subiect">
                 </div>
 
                 <div class="form-group">
-                    <label class="text-white">Mesaj</label>
+                    <label class="text-white">{{ Lang::get('main.m') }}</label>
                     <textarea class="form-control" name="mesaj" rows="6"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">Trimite</button>
+                <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">{{ Lang::get('main.t') }}</button>
 
             </form>
 

@@ -1,0 +1,32 @@
+<?php
+return [
+    'Con' => 'Conectare',
+    'inregistrare1' => 'Înregistrare',
+    'vreti_sa' => 'Vreți să',
+    'creeati' => 'Creeați un cont',
+    'aveti' => 'Aveți deja un cont?',
+    'acces' => 'Accesează un quiz',
+    'despre' => 'Despre',
+    'flex' => 'Platformă Educațională Flexibilă',
+    'elevi' => 'Elevi',
+    'plat_elevi' => 'Platforma Elevilor',
+    'plat' => 'Accesează platforma elevilor și parcurge un quiz creat de un profesor.',
+    'prof' => 'Profesori',
+    'plat_prof' => 'Platforma Profesorilor',
+    'create' => 'Crează lecții interesante sau jocuri interactive pentru evaluarea cunoștințelor.',
+    'despre' => 'Despre Capadu',
+    'text1' => 'Capadu este o platformă educațională adresată atât elevilor cât și profesorilor. Aceasta oferă profesorilor posibilitatea să dețină o pagină online proprie unde pot posta articole și materiale accesebile tuturor.',
+    'text2' => 'De asemenea cu ajutorul acestei platforme, profesorii au posibilitatea să utilizeaze softul de evaluare interactiv prezentat sub forma unui joc pentru elevi.',
+    'ev' => 'Evaluare Capadu',
+    'mob' => 'Compatibil cu dispozitivele mobile',
+    'inv' => 'Invățare interactivă',
+    'luc' => 'Lucru în echipă',
+    'intre' => 'Întrebarile sunt setate de profesor',
+    'pro' => 'Proiectul Capadu',
+    'text3' => 'Proiectul Capadu este realizat de Radu Mihalache și Sebastian Luca. Scopul acestuia este să ajute atât profesorii, dar mai ales elevii pentru ca experiența de învățare să devină mai interesantă și captivantă.',
+    'em' => 'Email Adress',
+    's' => 'Subiect',
+    'm' => 'Mesaj',
+    't' => 'Trimite'
+
+];
