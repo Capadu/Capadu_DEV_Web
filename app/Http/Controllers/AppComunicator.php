@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,26 +11,15 @@ class AppComunicator extends Controller
 {
     public function app_validate($token)
     {
-        $user_api_token = (User_Api_Token::where('connection_token', '=', $token)->first());
-        if (empty($user_api_token)) {
-            return false;
-        }
-        $user = $user_api_token->user;
-
+        $user = (User_Api_Token::where('connection_token', '=', $token)->first())->user;
         $status = array(
             'validity' => !(!($user)),
         );
         return $status;
     }
-
     public function app_recivecapadus(Request $request, $token)
     {
-        $user_api_token = (User_Api_Token::where('connection_token', '=', $token)->first());
-        if (empty($user_api_token)) {
-            return false;
-        }
-        $user = $user_api_token->user;
-
+        $user = (User_Api_Token::where('connection_token', '=', $token)->first())->user;
         if (!$user || !$request->id) {
             return 0;
         }
@@ -41,15 +29,9 @@ class AppComunicator extends Controller
         $user_capadu->save();
         return "DONE!";
     }
-
     public function app_sendcapadus($token)
     {
-        $user_api_token = (User_Api_Token::where('connection_token', '=', $token)->first());
-        if (empty($user_api_token)) {
-            return false;
-        }
-        $user = $user_api_token->user;
-        
+        $user = (User_Api_Token::where('connection_token', '=', $token)->first())->user;
         if (!$user) {
             return 0;
         }
