@@ -11,7 +11,7 @@ class AppComunicator extends Controller
 {
     public function app_validate($token)
     {
-        $user = (User_Api_Token::where('connection_token', '=', $token)->first())->user;
+        $user = User_Api_Token::where('connection_token', '=', $token)->first();
         $status = array(
             'validity' => !(!($user)),
         );
@@ -19,7 +19,7 @@ class AppComunicator extends Controller
     }
     public function app_recivecapadus(Request $request, $token)
     {
-        $user = (User_Api_Token::where('connection_token', '=', $token)->first())->user;
+        $user = User_Api_Token::where('connection_token', '=', $token)->first();
         if (!$user || !$request->id) {
             return 0;
         }
@@ -31,7 +31,7 @@ class AppComunicator extends Controller
     }
     public function app_sendcapadus($token)
     {
-        $user = (User_Api_Token::where('connection_token', '=', $token)->first())->user;
+        $user = User_Api_Token::where('connection_token', '=', $token)->first();
         if (!$user) {
             return 0;
         }
