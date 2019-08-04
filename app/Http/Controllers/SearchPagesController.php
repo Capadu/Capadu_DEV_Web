@@ -11,7 +11,7 @@ class SearchPagesController extends Controller
             'route' => 'required|string|max:255',
         ]);
 
-        return redirect('http://192.168.10.190:8000/page/'.$request->route);
+        return redirect('page/'.$request->route);
 
     }
 }

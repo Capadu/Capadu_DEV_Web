@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Mail;
+use Redirect;
+use App\Message;
 
 class FeedbackController extends Controller
 {
@@ -20,9 +22,19 @@ class FeedbackController extends Controller
         return redirect('main');
     }
 
-    public function page(Request $request) {
-        
-        return redirect('main');
+    public function page(Request $request, $page) {
+        $request->validate([
+            'nume' => 'required|string|max:255',
+            'mesaj' => 'required|string|max:500'
+        ]);
+
+        $message = new Message();
+        $message->mesaj = $request->mesaj;
+        $message->nume = $request->nume;
+        $message->page_id = $page;
+        $message->save();
+
+        return Redirect::back();
     }
 
     function send_email($user_data) {

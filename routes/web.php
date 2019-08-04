@@ -71,7 +71,7 @@ Route::group(['prefix' => 'page'], function () {
 Route::group(['prefix' => 'feedback'], function () {
 
     Route::post('/website', 'FeedbackController@website');
-    Route::post('/page', 'FeedbackController@page');
+    Route::post('/page/{page}', 'FeedbackController@page');
 
 });
 

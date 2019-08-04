@@ -15,4 +15,8 @@ class Page extends Model
     public function master(){
         return $this->belongsTo('App\Page_Master', 'page_master_id');
     }
+
+    public function message(){
+        return $this->hasMany('App\Message', 'page_id');
+    }
 }
