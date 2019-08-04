@@ -60,28 +60,49 @@
 
     <div class="container">
 
-        <h2 class="section-heading text-white text-center">Contact</h2>
+
+
+        <hr class="white_underline">
+        <h2 class="section-heading text-white text-center">Feed-back</h2>
+        <hr class="white_underline">
+
+        <div class="comments">
+            
+            <div class="comment card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4 user_avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="white_underline">
+        <h2 class="section-heading text-white text-center">Evaluează aceasta pagina</h2>
         <hr class="white_underline">
 
         <form class="contact-form" method="POST" action="/feedback/website">
             @csrf
-            
+
             <div class="form-group">
-                <label class="text-white">{{ Lang::get('main.em') }}</label>
-                <input type="email" class="form-control" name="email">
+                <label class="text-white">Nume</label>
+                <input type="text" class="form-control" name="nume">
             </div>
 
             <div class="form-group">
-                <label class="text-white">{{ Lang::get('main.s') }}</label>
-                <input type="text" class="form-control" name="subiect">
-            </div>
-
-            <div class="form-group">
-                <label class="text-white">{{ Lang::get('main.m') }}</label>
+                <label class="text-white">Mesaj</label>
                 <textarea class="form-control" name="mesaj" rows="6"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5">{{ Lang::get('main.t') }}</button>
+            <button type="submit" class="btn btn-warning btn-xl rounded-pill mt-5" style="color: white;">{{ Lang::get('main.t') }}</button>
 
         </form>
 

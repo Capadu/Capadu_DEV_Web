@@ -92,3 +92,25 @@
     background-color: #f05f40;
     padding: 60px 0px 60px 0px;
 }
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+    width: 100%;
+}
+
+.comment {
+    width: 60%;
+}
+
+.user_avatar i {
+    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;
+}
