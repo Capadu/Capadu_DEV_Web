@@ -40,7 +40,7 @@
 
     <img src="/Common/img/logo.png"  width="280px" height="280px" />
 
-    <form action="http://192.168.10.150:3000/player/">
+    <form action="http://192.168.10.190:3000/player/">
 
         <input type = "text" name= "name" placeholder="Numele" autofocus/>
 

@@ -89,12 +89,12 @@
 
         <li class="header">Capadu Tests</li>
         <li>
-            <a href="http://192.168.10.150:3000/create/quiz-creator/?tocken={{ Session::get('user')->token->connection_token }}">  
+            <a href="http://192.168.10.190:3000/create/quiz-creator/?tocken={{ Session::get('user')->token->connection_token }}">  
                 <i class="fa fa-magic"></i> <span>Create Capadu</span>
             </a>
         </li>
         <li>
-            <a href="http://192.168.10.150:3000/create/?tocken={{ Session::get('user')->token->connection_token }}">
+            <a href="http://192.168.10.190:3000/create/?tocken={{ Session::get('user')->token->connection_token }}">
                 <i class="fa fa-play"></i> <span>Start Capadu</span>
             </a>
         </li>
@@ -229,7 +229,7 @@
                         <td>{{$file->file_name}}</td>
                         <td>{{$file->file_size}} MB</td>
                         <td>{{$file->created_at}}</td>
-                        <td>http://192.168.10.150:8000/file_manager/download/{{$file->route}}</td>
+                        <td>http://192.168.10.190:8000/file_manager/download/{{$file->route}}</td>
                         <td>
 
                         <div class="custom-row">
