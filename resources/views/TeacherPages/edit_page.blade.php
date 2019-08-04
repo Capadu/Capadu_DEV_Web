@@ -67,7 +67,7 @@
 @section('sidebar')
 
     <!-- search form -->
-    <form method="post" action="search" class="sidebar-form">
+    <form method="post" action="../../search" class="sidebar-form">
         @csrf
         
         <div class="input-group">
@@ -120,7 +120,7 @@
             </a>
         </li>
         <li>
-            <a href="../page_manager/create">
+            <a href="../../page_manager/create">
                 <i class="fa fa-plus"></i> <span>Create New Page</span>
             </a>
         </li>
