@@ -170,9 +170,11 @@
             height: 300,
             theme: 'modern',
             plugins: [
-                'image imagetools'
+                'image imagetools',
+                "textcolor",
+                "link",
             ],
-            toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor',
             relative_urls: false,
             file_browser_callback: function(field_name, url, type, win) {
                 // trigger file upload form

@@ -157,6 +157,8 @@
         
     </section>
 
+    <textarea id="intermediary_string" style="display: none;">{!! $page->content !!}</textarea>
+
 @endsection
 
 @section('custom-scripts')
@@ -170,9 +172,11 @@
             height: 300,
             theme: 'modern',
             plugins: [
-                'image imagetools'
+                'image imagetools',
+                "textcolor",
+                "link",
             ],
-            toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor',
             relative_urls: false,
             file_browser_callback: function(field_name, url, type, win) {
                 // trigger file upload form
@@ -184,12 +188,9 @@
 
     <script>
         $(document).ready(function() {
-            @php
-                $content = $page->content;
-                $content=str_replace("\r\n","",$content);
-            @endphp
 
-            tinymce.get('content').setContent('{!! $content !!}');
+            var dom_content = document.getElementById("intermediary_string").value;
+            tinymce.get('content').setContent(dom_content);
         });
     </script>
 
