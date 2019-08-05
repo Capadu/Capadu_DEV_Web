@@ -45,10 +45,6 @@
 }
 
 .content-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
     overflow-x: hidden;
     margin-top: 80px;
     width: 90%;
